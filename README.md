@@ -1,4 +1,4 @@
-# 🎲 Dice Betting Game
+# 🎲 SATx
 
 A simple dice betting game built with **p5.js**.  
 Players can roll dice, place bets, answer bonus math questions, and customize the background for a fun, interactive experience.  
