@@ -10,7 +10,8 @@ Players can roll dice, place bets, answer bonus math questions, and customize th
 - 💰 Betting system with adjustable stakes  
 - 🧮 Bonus math questions for extra rewards  
 - 🎨 Background customization  
-- 📊 Game state management (track score, bets, and progress)  
+- 📊 Game state management (track score, bets, and progress)
+- 💾 Save & Load Game Progress (continue where you left off!)  
 
 ---
 
@@ -32,4 +33,3 @@ Players can roll dice, place bets, answer bonus math questions, and customize th
 # 📌 To-do (Future Ideas)
 - Multiplayer support
 - More math question types
-- Save/load game process
