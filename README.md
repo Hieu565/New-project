@@ -11,7 +11,8 @@ Players can roll dice, place bets, answer bonus math questions, and customize th
 - 🧮 Bonus math questions for extra rewards  
 - 🎨 Background customization  
 - 📊 Game state management (track score, bets, and progress)
-- 💾 Save & Load Game Progress (continue where you left off!)  
+- 💾 Save & Load Game Progress (continue where you left off!)
+- 🔄 Refresh Game 
 
 ---
 
@@ -33,3 +34,4 @@ Players can roll dice, place bets, answer bonus math questions, and customize th
 # 📌 To-do (Future Ideas)
 - Multiplayer support
 - More math question types
+- Size adjust with screen
