@@ -6,8 +6,8 @@ const MATH_REWARD_RANGE = [50, 200];
 const MAX_HISTORY = 10;
 const ROLL_DURATION = 20;
 const BACKGROUND_OPTIONS = {
-  basic: { color: [0, 0, 100], price: 0, label: "Basic (Dark Green)" },
-  standard: { color: [0, 100, 0], price: 1000, label: "Standard (Dark Blue)" },
+  basic: { color: [0, 100, 0], price: 0, label: "Basic (Dark Green)" },
+  standard: { color: [0, 0, 100], price: 1000, label: "Standard (Dark Blue)" },
   premier: { color: [184, 134, 11], price: 2000, label: "Premier (Dark Gold)" },
   firstClass: { color: [0, 0, 0], price: 10000, label: "First-class (Black)" },
 };
@@ -62,7 +62,7 @@ math: {
 		noStroke();
 		generateMathQuestion();
 		game.lastTick = millis(); // Initialize countdown timer
-		loadGame();
+		loadDiceGame();
 	}
 
 // Main draw loop
@@ -285,7 +285,8 @@ function drawDiceUI()	{
 	function drawFeatureButton() {
 		drawButton(20, 80, 200, 50, "Solve questions for money", color(255, 215, 0), 16);
 		drawButton(20, 20, 200, 50, "Open Background Market", color(70, 70, 200), 16);
-		drawButton(width - 90, 20, 70, 50, "Save", color(70, 70, 200), 16);
+		drawButton(width - 120, 20, 100, 50, "Save", color(70, 70, 200), 16);
+		drawButton(width - 120, 80, 100, 50, "Refresh", color(200, 100, 0), 16);
 	}
 
 	function drawBetButtons() {
@@ -372,8 +373,14 @@ function drawDiceUI()	{
 				}
 
 				//save game
-				if (mouseInRect(width - 90, 20, 70, 50)) {
-					saveGame();
+				if (mouseInRect(width - 120, 20, 100, 50)) {
+					saveDiceGame();
+					return true;
+				}
+			
+				//refresh game
+				if (mouseInRect(width - 120, 80, 100, 50)) {
+					refreshDiceGame();
 					return true;
 				}
 			
@@ -381,7 +388,7 @@ function drawDiceUI()	{
 			}
 
 	// 🔹 Save current game state
-		function saveGame() {
+		function saveDiceGame() {
 			let saveData = {
 				balance: game.balance,
 				betAmount: game.betAmount,
@@ -394,7 +401,7 @@ function drawDiceUI()	{
 		}
 
 	// 🔹 Load saved game state
-		function loadGame() {
+		function loadDiceGame() {
 			let saveData = getItem("diceGameSave");
 			if (saveData) {
 				game.balance = saveData.balance ?? INITIAL_BALANCE;
@@ -405,6 +412,27 @@ function drawDiceUI()	{
 				game.result = "Game loaded!";
 			}
 		}
+
+	//refresh game
+		function refreshDiceGame() {
+			game.balance = INITIAL_BALANCE;
+			game.betAmount = MIN_BET;
+			game.backgroundColor = BACKGROUND_OPTIONS.basic.color;
+			game.ownedBackgrounds = {
+				basic: true,
+				standard: false,
+				premier: false,
+				firstClass: false
+			};
+			game.history = [];
+			game.result = "Game refreshed!";
+			game.timer = 20;
+			game.lastTick = millis();
+			game.autoRolling = false;
+			game.rollCount = 0;
+			game.gameState_1 = "waiting";
+		}
+
 
 	// 🧮 Handle math questions
 			function HandleMathQuestions() {
