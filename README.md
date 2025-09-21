@@ -18,7 +18,7 @@ Players can roll dice, place bets, answer bonus math questions, and customize th
 
 ## 🚀 How to Run
 1. Clone this repository:
-2. YOu can try the game here: https://openprocessing.org/sketch/2680086 ; or open the following file
+2. You can try the game here: https://openprocessing.org/sketch/2680086 ; or open the following file
 
 ## 🎮 How to Play
 1. Place your bet (high/low)
