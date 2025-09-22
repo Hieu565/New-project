@@ -3,8 +3,6 @@
 A simple dice betting game built with **p5.js**.  
 Players can roll dice, place bets, answer bonus math questions, and customize the background for a fun, interactive experience.  
 
----
-
 ## ✨ Features
 - 🎲 Auto-rolling dice system  
 - 💰 Betting system with adjustable stakes  
@@ -12,9 +10,7 @@ Players can roll dice, place bets, answer bonus math questions, and customize th
 - 🎨 Background customization  
 - 📊 Game state management (track score, bets, and progress)
 - 💾 Save & Load Game Progress (continue where you left off!)
-- 🔄 Refresh Game 
-
----
+- 🔄 Refresh Game
 
 ## 🚀 How to Run
 1. Clone this repository:
@@ -35,3 +31,7 @@ Players can roll dice, place bets, answer bonus math questions, and customize th
 - Multiplayer support
 - More math question types
 - Size adjust with screen
+
+## 📜 License
+This project is licensed under the [MIT License](LICENSE).  
+You are free to use, modify, and distribute it with attribution.
